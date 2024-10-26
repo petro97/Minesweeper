@@ -14,7 +14,7 @@
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: start;
 }
 
 .App-title {
