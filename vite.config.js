@@ -7,51 +7,25 @@ export default defineConfig({
   plugins: [
     react(),
     VitePWA({
-      manifest: {
-        short_name: "MineSweeper",
-        name: "MineSweeper",
-        icons: [
-          {
-            src: "favicon.ico",
-            sizes: "48x48",
-            type: "image/x-icon"
-          },
-          {
-            src: "logo192.png",
-            type: "image/png",
-            sizes: "192x192"
-          },
-          {
-            src: "logo512.png",
-            type: "image/png",
-            sizes: "512x512"
-          }
-        ],
-        start_url: ".",
-        display: "standalone",
-        theme_color: "#000000",
-        background_color: "#ffffff"
-      },
+      manifest: '/manifest.json', // Reference to the existing manifest in the public folder
       registerType: 'autoUpdate', // Automatically update the service worker
       workbox: {
-        // Options for Workbox
         runtimeCaching: [
           {
             urlPattern: ({ request }) => request.destination === 'document',
-            handler: 'NetworkFirst', // Use the NetworkFirst strategy for HTML documents
+            handler: 'NetworkFirst',
           },
           {
             urlPattern: ({ request }) => request.destination === 'image',
-            handler: 'CacheFirst', // Use CacheFirst for images
+            handler: 'CacheFirst',
             options: {
-              cacheName: 'images', // Cache name
+              cacheName: 'images',
               expiration: {
-                maxEntries: 50, // Limit the number of entries
-                maxAgeSeconds: 30 * 24 * 60 * 60, // 30 Days
+                maxEntries: 50,
+                maxAgeSeconds: 30 * 24 * 60 * 60,
               },
             },
           },
-          // Add more caching strategies as needed
         ],
       },
     }),
