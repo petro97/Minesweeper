@@ -1,0 +1,1 @@
+{"name":"MineSweeper","short_name":"MineSweeper","start_url":".","display":"standalone","background_color":"#ffffff","lang":"en","scope":"/Minesweeper/","icons":[{"src":"favicon.ico","sizes":"48x48","type":"image/x-icon"},{"src":"logo192.png","type":"image/png","sizes":"192x192"},{"src":"logo512.png","type":"image/png","sizes":"512x512"}],"theme_color":"#000000"}
