@@ -9,10 +9,12 @@
 
 .App-header {
   background-color: #0b615e;
-  height: 150px;
   padding: 20px;
   color: white;
   margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .App-title {
@@ -77,14 +79,13 @@ li {
 
 input, textarea, select {
   font-family: inherit;
-  font-size: inherit;
   font-weight: inherit;
-  *font-size: 100%;
+  font-size: 100%;
 }
 
 pre, code, kbd, samp, tt {
   font-family: monospace;
-  *font-size: 108%;
+  font-size: 108%;
   line-height: 100%;
 }
 
@@ -213,6 +214,9 @@ object, embed {
   border-color: #fff #999 #999 #fff;
   height: 100%;
   display: block;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .MineSweeper__face .playing, .MineSweeper__face .notPlaying {

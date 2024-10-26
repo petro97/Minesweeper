@@ -7,7 +7,7 @@ const Minesweeper = () => (
   <div className="App">
     <header className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
-      <h1 className="App-title">  Minesweeper</h1>
+      <h1 className="App-title">Minesweeper</h1>
     </header>
     <Board />
   </div>
