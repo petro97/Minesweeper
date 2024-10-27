@@ -1,5 +1,6 @@
+import React from 'react';
 import { describe, it, expect } from 'vitest';
-import { mapStateToProps } from '/src/containers/GameMenu.js';
+import { mapStateToProps } from '../../containers/GameMenu'; // Adjust import based on your project structure
 
 describe('mapStateToProps', () => {
   it('is defined', () => {

@@ -2,6 +2,8 @@ import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   test: {
+    setupFiles: './src/tests/setupTests.js', // Adjust the path if your setup file is located elsewhere
+    globals: true, // This allows you to use globals like `describe`, `it`, and `expect` without importing them
     environment: 'jsdom',
     coverage: {
       include: ['tests/**/*.{test,spec}.{js,jsx,ts,tsx}'], // Adjust this pattern as needed

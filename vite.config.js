@@ -31,6 +31,7 @@ export default defineConfig({
     }),
   ],
   test: {
+    setupFiles: './setupTests.js',
     globals: true, // Enable global test functions (like describe, it, expect, etc.)
     environment: 'jsdom', // Set the environment to jsdom for DOM testing
     coverage: {
