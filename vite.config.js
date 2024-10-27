@@ -30,5 +30,21 @@ export default defineConfig({
       },
     }),
   ],
+  test: {
+    globals: true, // Enable global test functions (like describe, it, expect, etc.)
+    environment: 'jsdom', // Set the environment to jsdom for DOM testing
+    coverage: {
+      reporter: ['text', 'json', 'html'], // Configure coverage report formats
+      include: ['src/**/*.{js,jsx}'], // Specify files for coverage
+      exclude: ['**/*.test.{js,jsx}'], // Exclude test files from coverage
+      all: true, // Collect coverage for all files
+      80: true // Set coverage thresholds
+    }
+  },
+  resolve: {
+    alias: {
+      '@': '/src'
+    }
+  },
   base: 'Minesweeper', // Set to your repository name
 });
