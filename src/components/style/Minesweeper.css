@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  width: fit-content;
+  min-width: 100%;
 }
 
 .App-logo {
@@ -9,7 +11,7 @@
 
 .App-header {
   background-color: #0b615e;
-  padding: 20px;
+  padding: 20px 0;
   color: white;
   margin-bottom: 1rem;
   display: flex;
@@ -116,7 +118,6 @@ h6 {
 
 table {
   font-size: inherit;
-  font: 100%;
   border-collapse: collapse;
   border-spacing: 0;
 }
