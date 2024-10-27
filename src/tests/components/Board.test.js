@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from '@testing-library/react';
 import { describe, it, expect } from 'vitest';
-import Board from '@/components/Board.jsx';
+import Board from '../../components/Board.jsx';
 
 describe('Board Component', () => {
   const mockTable = [

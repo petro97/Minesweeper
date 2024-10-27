@@ -4,9 +4,9 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import {
   Container as LevelMenuContainer,
   mapStateToProps,
-} from '../../src/containers/LevelMenu'; // Make sure the import path is correct
-import { RESET_BOARD } from '../../src/actions/boardActions';
-import Levels from '../../src/reducers/Levels';
+} from '../../containers/LevelMenu.js'; // Make sure the import path is correct
+import { RESET_BOARD } from '../../actions/boardActions.js';
+import Levels from '../../reducers/Levels.js';
 import configureMockStore from 'redux-mock-store';
 import { Provider } from 'react-redux';
 

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { mapStateToProps } from '../../src/containers/Board.js';
+import { mapStateToProps } from '../../containers/Board.js';
 
 describe('mapStateToProps', () => {
   const cell = {

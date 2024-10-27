@@ -1,4 +1,4 @@
-import { mineLocationsFor } from '../../src/reducers/Levels.js';
+import { mineLocationsFor } from '../../reducers/Levels.js';
 import { describe, it, expect } from 'vitest';
 
 describe('mineLocationsFor', () => {

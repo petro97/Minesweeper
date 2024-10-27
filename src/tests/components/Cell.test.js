@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
 import { describe, it, expect, vi } from 'vitest';
-import Cell from '../../src/components/Cell';
+import Cell from '../../components/Cell.jsx';
 
 describe('Cell Component', () => {
   const baseProps = {
