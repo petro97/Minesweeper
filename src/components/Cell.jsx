@@ -1,29 +1,29 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const OpenCell = ({ count, hasMine }) => (
   <div className="Cell__cover Cell__cover--opened">
-    {!hasMine
-      && <span className={`Cell__number${count}`}>{count}</span>}
-    {hasMine
-      && <span className="Cell__bomb">b</span>}
+    {!hasMine && <span className={`Cell__number${count}`}>{count}</span>}
+    {hasMine && <span className="Cell__bomb">b</span>}
   </div>
 );
 
 OpenCell.propTypes = {
   count: PropTypes.number.isRequired,
-  hasMine: PropTypes.bool.isRequired
+  hasMine: PropTypes.bool.isRequired,
 };
 
-const ClosedCell = () => (
-  <div className="Cell__cover" />
-);
-const FlagCell = () => (
-  <div className="Cell__flag" />
-);
+const ClosedCell = () => <div className="Cell__cover" />;
+const FlagCell = () => <div className="Cell__flag" />;
 
 const Cell = ({
-  id, count, hasMine, isOpen, hasFlag, onOpen, onFlagToggle
+  id,
+  count,
+  hasMine,
+  isOpen,
+  hasFlag,
+  onOpen,
+  onFlagToggle,
 }) => (
   <td
     className="Cell"
@@ -33,9 +33,9 @@ const Cell = ({
       onFlagToggle(id);
     }}
   >
-    {!isOpen && !hasFlag && <ClosedCell /> }
-    {!isOpen && hasFlag && <FlagCell /> }
-    {isOpen && <OpenCell hasMine={hasMine} count={count} /> }
+    {!isOpen && !hasFlag && <ClosedCell />}
+    {!isOpen && hasFlag && <FlagCell />}
+    {isOpen && <OpenCell hasMine={hasMine} count={count} />}
   </td>
 );
 
@@ -45,7 +45,7 @@ Cell.propTypes = {
   hasFlag: PropTypes.bool.isRequired,
   isOpen: PropTypes.bool.isRequired,
   onOpen: PropTypes.func.isRequired,
-  onFlagToggle: PropTypes.func.isRequired
+  onFlagToggle: PropTypes.func.isRequired,
 };
 
 export default Cell;

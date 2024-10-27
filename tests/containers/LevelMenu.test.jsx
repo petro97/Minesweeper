@@ -1,16 +1,19 @@
-import React from "react";
-import { render } from "@testing-library/react";
-import { describe, it, expect, vi, beforeEach } from "vitest";
-import { Container as LevelMenuContainer, mapStateToProps } from "../../src/containers/LevelMenu"; // Make sure the import path is correct
-import { RESET_BOARD } from "../../src/actions/boardActions";
-import Levels from "../../src/reducers/Levels";
-import configureMockStore from "redux-mock-store";
-import { Provider } from "react-redux";
+import React from 'react';
+import { render } from '@testing-library/react';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import {
+  Container as LevelMenuContainer,
+  mapStateToProps,
+} from '../../src/containers/LevelMenu'; // Make sure the import path is correct
+import { RESET_BOARD } from '../../src/actions/boardActions';
+import Levels from '../../src/reducers/Levels';
+import configureMockStore from 'redux-mock-store';
+import { Provider } from 'react-redux';
 
 const middlewares = [];
 const mockStore = configureMockStore(middlewares);
 
-describe("LevelMenu Container", () => {
+describe('LevelMenu Container', () => {
   let store;
 
   beforeEach(() => {
@@ -21,16 +24,16 @@ describe("LevelMenu Container", () => {
     });
   });
 
-  it("renders LevelMenu with correct props", () => {
+  it('renders LevelMenu with correct props', () => {
     const { getByText } = render(
-        <Provider store={store}>
-          <LevelMenuContainer />
-        </Provider>
+      <Provider store={store}>
+        <LevelMenuContainer />
+      </Provider>
     );
 
     // Check for the presence of level names
-    const levelNames = Object.values(Levels()).map(level => level.name);
-    levelNames.forEach(name => {
+    const levelNames = Object.values(Levels()).map((level) => level.name);
+    levelNames.forEach((name) => {
       expect(getByText(name)).toBeInTheDocument();
     });
   });

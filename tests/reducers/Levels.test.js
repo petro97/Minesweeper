@@ -1,11 +1,11 @@
-import { mineLocationsFor } from "../../src/reducers/Levels.js";
-import { describe, it, expect } from "vitest";
+import { mineLocationsFor } from '../../src/reducers/Levels.js';
+import { describe, it, expect } from 'vitest';
 
-describe("mineLocationsFor", () => {
+describe('mineLocationsFor', () => {
   const levels = [
-    { level: "BEGINNER", expectedLength: 10 },
-    { level: "INTERMEDIATE", expectedLength: 40 },
-    { level: "EXPERT", expectedLength: 99 }
+    { level: 'BEGINNER', expectedLength: 10 },
+    { level: 'INTERMEDIATE', expectedLength: 40 },
+    { level: 'EXPERT', expectedLength: 99 },
   ];
 
   levels.forEach(({ level, expectedLength }) => {

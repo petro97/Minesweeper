@@ -6,12 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "lint": "eslint my-vite-react-redux-app",
     "preview": "vite preview",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d dist",
     "test": "vitest",
     "test:coverage": "vitest --coverage",
+    "lint": "eslint .",
     "format": "prettier --write ."
   },
   "dependencies": {

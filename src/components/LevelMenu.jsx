@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const LevelMenu = ({ gameLevels, changeLevel, activeLevel }) => (
   <div className="MineSweeper__level">
@@ -23,7 +23,7 @@ const LevelMenu = ({ gameLevels, changeLevel, activeLevel }) => (
 LevelMenu.propTypes = {
   gameLevels: PropTypes.arrayOf(PropTypes.object).isRequired,
   changeLevel: PropTypes.func.isRequired,
-  activeLevel: PropTypes.string.isRequired
+  activeLevel: PropTypes.string.isRequired,
   // resetGame: PropTypes.func.isRequired
 };
 

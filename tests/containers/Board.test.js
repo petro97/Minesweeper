@@ -1,7 +1,7 @@
-import { describe, it, expect } from "vitest";
-import { mapStateToProps } from "../../src/containers/Board.js";
+import { describe, it, expect } from 'vitest';
+import { mapStateToProps } from '../../src/containers/Board.js';
 
-describe("mapStateToProps", () => {
+describe('mapStateToProps', () => {
   const cell = {
     hasMine: false,
     hasFlag: false,
@@ -10,17 +10,17 @@ describe("mapStateToProps", () => {
   };
 
   const board = {
-    "0,0": cell,
-    "0,1": cell,
-    "1,0": cell,
-    "1,1": cell,
+    '0,0': cell,
+    '0,1': cell,
+    '1,0': cell,
+    '1,1': cell,
   };
 
-  it("is defined", () => {
+  it('is defined', () => {
     expect(mapStateToProps).toBeDefined();
   });
 
-  it("returns a structured table from board state", () => {
+  it('returns a structured table from board state', () => {
     const props = mapStateToProps({ board });
 
     expect(props.table).toBeDefined();

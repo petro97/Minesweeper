@@ -1,13 +1,13 @@
-import React from "react";
-import { Provider } from "react-redux";
-import { createStore } from "redux";
-import minesweeperReducer from "./reducers/minesweeperReducer";
-import Minesweeper from "./components/Minesweeper";
-import { RESET_BOARD } from "./actions/boardActions";
+import React from 'react';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import minesweeperReducer from './reducers/minesweeperReducer';
+import Minesweeper from './components/Minesweeper';
+import { RESET_BOARD } from './actions/boardActions';
 
 const initAction = {
   type: RESET_BOARD,
-  level: "BEGINNER"
+  level: 'BEGINNER',
 };
 
 const App = () => {
@@ -24,6 +24,5 @@ const App = () => {
     </Provider>
   );
 };
-
 
 export default App;

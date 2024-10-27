@@ -38,13 +38,13 @@ export default defineConfig({
       include: ['src/**/*.{js,jsx}'], // Specify files for coverage
       exclude: ['**/*.test.{js,jsx}'], // Exclude test files from coverage
       all: true, // Collect coverage for all files
-      80: true // Set coverage thresholds
-    }
+      80: true, // Set coverage thresholds
+    },
   },
   resolve: {
     alias: {
-      '@': '/src'
-    }
+      '@': '/src',
+    },
   },
   base: 'Minesweeper', // Set to your repository name
 });

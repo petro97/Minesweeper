@@ -1,5 +1,5 @@
-import React, { useState, useEffect, useCallback } from "react";
-import PropTypes from "prop-types";
+import React, { useState, useEffect, useCallback } from 'react';
+import PropTypes from 'prop-types';
 
 const GameMenu = ({ gameStatus, resetGame, flagCount }) => {
   const [counter, setCounter] = useState(0);
@@ -8,10 +8,10 @@ const GameMenu = ({ gameStatus, resetGame, flagCount }) => {
   console.log('gameStatus', gameStatus);
   // Define the tick function with useCallback to avoid re-creating it on each render
   const tick = useCallback(() => {
-    if (gameStatus === "notPlaying") {
+    if (gameStatus === 'notPlaying') {
       setCounter(0);
       setResetTimer(true);
-    } else if (gameStatus === "playing") {
+    } else if (gameStatus === 'playing') {
       setCounter((prevCounter) => (resetTimer ? 0 : prevCounter + 1));
       setResetTimer(false);
     } else {
@@ -26,17 +26,17 @@ const GameMenu = ({ gameStatus, resetGame, flagCount }) => {
   }, [tick]);
 
   return (
-      <div>
-        <span className="MineSweeper__flagNum">{`${flagCount}`}</span>
-        <span className="MineSweeper__face">
+    <div>
+      <span className="MineSweeper__flagNum">{`${flagCount}`}</span>
+      <span className="MineSweeper__face">
         <span
-            className={`button ${gameStatus}`}
-            role="button"
-            onClick={resetGame}
+          className={`button ${gameStatus}`}
+          role="button"
+          onClick={resetGame}
         />
       </span>
-        <span className="MineSweeper__time">{counter}</span>
-      </div>
+      <span className="MineSweeper__time">{counter}</span>
+    </div>
   );
 };
 

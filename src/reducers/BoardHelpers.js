@@ -1,9 +1,9 @@
 /* eslint-disable max-len */
-import { defaultCell } from "./defaultStore";
-import Levels from "./Levels";
+import { defaultCell } from './defaultStore';
+import Levels from './Levels';
 
 const LEVELS = Levels();
-const SEPARATOR = ",";
+const SEPARATOR = ',';
 
 const parseCoordinates = (id) => {
   const coords = id.split(SEPARATOR);
@@ -22,10 +22,8 @@ const forBoardSize = (boardSize, callback) => {
 };
 
 const currentGameLevelId = (board) => {
-  const boardSize = Math.sqrt((Object.keys(board).length));
-  return Object.keys(LEVELS).find((id) => (
-    LEVELS[id].boardSize === boardSize
-  ));
+  const boardSize = Math.sqrt(Object.keys(board).length);
+  return Object.keys(LEVELS).find((id) => LEVELS[id].boardSize === boardSize);
 };
 
 const forSurroundCells = (coordinate, callback) => {
@@ -42,7 +40,9 @@ const forSurroundCells = (coordinate, callback) => {
 };
 
 const open = (board, id) => {
-  if (board[id].isOpen || board[id].hasFlag) { return board; }
+  if (board[id].isOpen || board[id].hasFlag) {
+    return board;
+  }
 
   const cell = { ...board[id], isOpen: true };
   const newBoard = { ...board, [id]: cell };
@@ -67,7 +67,11 @@ const openAround = (board, id) => {
   let newBoard = { ...board };
 
   forSurroundCells(id, (coordinate) => {
-    if (newBoard[coordinate] && !newBoard[coordinate].hasMine && !newBoard[coordinate].isOpen) {
+    if (
+      newBoard[coordinate] &&
+      !newBoard[coordinate].hasMine &&
+      !newBoard[coordinate].isOpen
+    ) {
       newBoard = open(newBoard, coordinate);
     }
   });
@@ -101,22 +105,40 @@ const resetBoard = (boardSize, mineLocations) => {
   return board;
 };
 
-const hasLost = (board) => Object.values(board).some((cell) => cell.hasMine && cell.isOpen);
+const hasLost = (board) =>
+  Object.values(board).some((cell) => cell.hasMine && cell.isOpen);
 const hasWon = (board) => {
-  if (hasLost(board)) { return false; }
+  if (hasLost(board)) {
+    return false;
+  }
 
-  const nonOpenCount = Object.values(board).filter((cell) => !cell.isOpen).length;
-  const flaggedMineCount = Object.values(board).filter((cell) => cell.hasMine && cell.hasFlag).length;
+  const nonOpenCount = Object.values(board).filter(
+    (cell) => !cell.isOpen
+  ).length;
+  const flaggedMineCount = Object.values(board).filter(
+    (cell) => cell.hasMine && cell.hasFlag
+  ).length;
   return nonOpenCount === flaggedMineCount;
 };
 const notPlaying = (board) => {
-  const openAndFlagged = Object.values(board).filter((cell) => (cell.hasFlag || cell.isOpen)).length;
+  const openAndFlagged = Object.values(board).filter(
+    (cell) => cell.hasFlag || cell.isOpen
+  ).length;
   return openAndFlagged === 0;
 };
-const flagCount = (board) => Object.values(board).filter((cell) => cell.hasFlag).length;
+const flagCount = (board) =>
+  Object.values(board).filter((cell) => cell.hasFlag).length;
 
 export {
-  currentGameLevelId, emptyBoard, flagCount,
-  forBoardSize, forSurroundCells, hasLost, notPlaying,
-  hasWon, open, resetBoard, toggleFlag
+  currentGameLevelId,
+  emptyBoard,
+  flagCount,
+  forBoardSize,
+  forSurroundCells,
+  hasLost,
+  notPlaying,
+  hasWon,
+  open,
+  resetBoard,
+  toggleFlag,
 };

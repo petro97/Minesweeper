@@ -1,7 +1,7 @@
-import React from "react";
-import Board from "../containers/Board";
-import logo from "../logo.svg";
-import "./style/Minesweeper.css";
+import React from 'react';
+import Board from '../containers/Board';
+import logo from '../logo.svg';
+import './style/Minesweeper.css';
 
 const Minesweeper = () => (
   <div className="App">

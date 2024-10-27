@@ -1,9 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import Cell from "../containers/Cell";
-import GameMenu from "../containers/GameMenu";
-import LevelMenu from "../containers/LevelMenu";
+import Cell from '../containers/Cell';
+import GameMenu from '../containers/GameMenu';
+import LevelMenu from '../containers/LevelMenu';
 
 const Board = ({ table, activeLevel }) => (
   <div>
@@ -27,7 +27,7 @@ const Board = ({ table, activeLevel }) => (
 
 Board.propTypes = {
   table: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.object)).isRequired,
-  activeLevel: PropTypes.string.isRequired
+  activeLevel: PropTypes.string.isRequired,
 };
 
 export default Board;

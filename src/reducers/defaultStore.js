@@ -3,11 +3,11 @@ const defaultCell = {
   hasFlag: false,
   isOpen: false,
   count: 0,
-  id: null
+  id: null,
 };
 
 const defaultStore = {
-  board: { }
+  board: {},
 };
 
 export { defaultStore as default, defaultCell };

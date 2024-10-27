@@ -1,21 +1,20 @@
 const LEVELS = {
   BEGINNER: {
-    name: "Beginner",
+    name: 'Beginner',
     boardSize: 9,
-    mines: 10
+    mines: 10,
   },
   INTERMEDIATE: {
-    name: "Intermediate",
+    name: 'Intermediate',
     boardSize: 16,
-    mines: 40
+    mines: 40,
   },
   EXPERT: {
-    name: "Expert",
+    name: 'Expert',
     boardSize: 24,
-    mines: 99
-  }
+    mines: 99,
+  },
 };
-
 
 const Levels = () => JSON.parse(JSON.stringify(LEVELS));
 
