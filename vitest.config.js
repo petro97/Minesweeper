@@ -6,7 +6,7 @@ export default defineConfig({
     globals: true, // This allows you to use globals like `describe`, `it`, and `expect` without importing them
     environment: 'jsdom',
     coverage: {
-      include: ['tests/**/*.{test,spec}.{js,jsx,ts,tsx}'], // Adjust this pattern as needed
+      include: ['src/tests/**/*.{test,spec}.{js,jsx,ts,tsx}'], // Adjust this pattern as needed
       provider: 'v8', // or 'c8', depending on what’s available
       reporter: ['text', 'html'],
       all: true, // include all files, not just those with tests
