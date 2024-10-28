@@ -52,8 +52,4 @@ Coverage Report:
 
 `yarn test:coverage`
 
-Deployment
-To deploy the game on GitHub Pages:
-
-`yarn deploy`
 
